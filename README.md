@@ -1,0 +1,2 @@
+# wstest
+ Test for WorldSkills
