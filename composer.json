@@ -1,0 +1,17 @@
+{
+  "name": "bloodybagle/wsloader",
+  "require": {
+    "usmanhalalit/pixie": "dev-master",
+    "phpoffice/phpspreadsheet": "dev-master",
+    "tracy/tracy": "~2.9"
+  },
+  "autoload" : {
+    "files" : [
+      "inc/config.inc.php",
+      "inc/common.inc.php"
+    ],
+    "psr-4" : {
+      "wsTest\\" : "inc"
+    }
+  }
+}

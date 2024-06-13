@@ -1,0 +1,467 @@
+/* основные цвета
+белый rgb(255, 255, 255)
+красный rgb(193, 66, 59)
+черный rgb(8, 8, 8)
+
+доп. цвета
+оранжевый rgb(207, 118, 49)
+желтый rgb(226, 197, 62)
+аква rgb(98, 163, 159)
+голубой rgb(78, 132, 190)
+синий rgb(49, 78, 113)
+фиолетовый rgb(76, 55, 118)
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 1.5em;
+    background-color: rgb(78, 132, 190);
+    font-family: Arial, sans-serif;
+    background-image: url(bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    color: white;
+}
+#logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
+}
+.quest {
+    font-weight: bold;
+}
+.note {
+    display: none;
+    z-index: 10;
+    padding: 15px;
+}
+label{
+    float: left;
+    display: block;
+    clear: both;
+    margin-top: 10px;
+    padding: 5px;
+    width: 94%;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+label > input {
+    margin-left: -22px;
+}
+label:nth-child(odd){
+    background-color: rgba(76, 55, 118, 0.3);
+}
+label:nth-child(even){
+    background-color: rgba(76, 55, 118, 0.2);
+}
+/* Модальное окно */
+.modal_div {
+   width: 600px;
+   height: 500px; /* Рaзмеры дoлжны быть фиксирoвaны */
+   border-radius: 8px;
+   border: 2px rgb(49, 78, 113) solid;
+   background: white;
+   color: rgb(76, 55, 118);
+   /*position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+   display: none;
+   opacity: 0;
+   margin: 10px;
+   padding: 10px;
+   align-items: center;
+   align-content: center;
+   z-index: 5;
+   box-shadow: 4px 0px 10px rgba(49, 78, 113, 0.5),
+    -4px 0px 10px rgba(49, 78, 113, 0.5),
+    0px 4px 10px rgba(49, 78, 113, 0.5),
+    0px -4px 10px rgba(49, 78, 113, 0.5);
+}
+#result {
+    width: 90% !important;
+    overflow: scroll;
+    padding: 10px;
+}
+#modal0 {
+    display: block;
+    opacity: 1;
+}
+#ws {
+    display: none;
+    clear: both;
+}
+.next, .nnext, .nnnext {
+    width: 150px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(76, 55, 118);/*#4e84be;*/
+    float: right;
+    position: relative;
+    display: block;
+    clear: both; 
+    border: thin #333 solid;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-weight: lighter;
+    font-size: 1.2em;
+    /*top: 350px;*/
+    margin-right: 220px;
+   /* align-self: flex-end;*/
+}
+.mc {
+    width: 98%;
+    padding: 5px;
+    text-align: justify;
+}
+.h {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-top: 5px;
+}
+.hidden{
+    display: none;
+}
+#rm {
+    text-align: left;
+    width: 100%;
+    text-align: center;
+}
+#reg {
+    width: 100%;
+    text-align: center;
+}
+#i {
+    text-align: center;
+}
+.path {
+    background-color: #4290e277;
+    border: thin solid #333;
+    border-radius: 5px;
+    padding: 5px;
+}
+@media all and (max-width: 1080px) {
+    html, body {
+        line-height: 1.5em;
+    } 
+    .modal_div {
+        width: 500px;
+        height: 400px; /* Рaзмеры дoлжны быть фиксирoвaны */
+        
+    }
+    .mc {
+        width: 98%;
+        padding: 5px;
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        
+    }
+    .next {
+       height: 30px; 
+    }
+    .select2 {
+        width: 98% !important;
+    }
+    .note {
+        padding: 5px;
+    }
+}
+
+@media all and (max-width: 428px) {
+    html, body {
+        line-height: 1.5em;
+        background-image: url();
+    } 
+    .modal_div {
+        width: 410px;
+        height: 700px; /* Рaзмеры дoлжны быть фиксирoвaны */
+        
+    }
+    .mc {
+        width: 98%;
+        padding: 5px;
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        
+    }
+    #ws {
+        display: block;
+    }
+    .next {
+       height: 30px; 
+    }
+    .select2 {
+        width: 98% !important;
+    }
+    .note {
+        padding: 5px;
+    }
+}
+
+@media all and (max-width: 414px) {
+        html, body {
+        line-height: 1.5em;
+        background-image: url();
+    }
+    .modal_div {
+        width: 400px;
+        height: 650px; /* Рaзмеры дoлжны быть фиксирoвaны */
+        
+    }
+    .mc {
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        
+    }
+    #ws {
+        display: block;
+    }
+    
+}
+
+@media all and (max-width: 412px) {
+        html, body {
+        line-height: 1.5em;
+        background-image: url();
+    }
+    .modal_div {
+        width: 400px;
+        height: 650px; /* Рaзмеры дoлжны быть фиксирoвaны */
+        
+    }
+    .mc {
+        width: 98%;
+        padding: 5px;
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1.2em;
+  
+    }
+    #ws {
+        display: block;
+    }
+    .next {
+       height: 30px; 
+    }
+    .select2 {
+        width: 98% !important;
+    }
+    .note {
+        padding: 5px;
+    }
+}
+
+@media all and (max-width: 393px) {
+    html, body {
+        line-height: 1.5em;
+        background-image: url();
+    }
+    .modal_div {
+        width: 380px;
+        height: 655px; /* Рaзмеры дoлжны быть фиксирoвaны */
+        
+    }
+    .mc {
+        width: 98%;
+        padding: 5px;
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1em;
+
+    }
+    .mc p:nth-child(3) {
+        margin: 0;
+    }
+    
+    #ws {
+        display: block;
+    }
+    .next, .nnext, .nnnext {
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+    .select2 {
+        width: 98% !important;
+    }
+    .note {
+        padding: 5px;
+    }
+    .h {
+        font-size: 1.1em;
+        line-height: 1.3em;
+        margin-top: 5px;
+    }
+}
+
+@media all and (max-width: 390px) {
+    html, body {
+        line-height: 1.5em;
+        background-image: url();
+    }
+    #logo {
+        display: none;
+    }
+    .modal_div {
+        width: 360px;
+        height: 655px; /* Рaзмеры дoлжны быть фиксирoвaны */
+        
+    }
+    .mc {
+        width: 98%;
+        padding: 5px;
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1em;
+
+    }
+    .mc p:nth-child(3) {
+        margin: 0;
+    }
+    
+    #ws {
+        display: block;
+        background-color: rgb(78, 132, 190);
+    }
+    .next, .nnext, .nnnext {
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+    .select2 {
+        width: 98% !important;
+    }
+    .note {
+        padding: 5px;
+    }
+    .h {
+        font-size: 1.1em;
+        line-height: 1.3em;
+        margin-top: 5px;
+    }
+    label {
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 384px) {
+    html, body {
+        line-height: 1.5em;
+        background-image: url();
+    }
+    .modal_div {
+        width: 370px;
+        height: 655px; /* Рaзмеры дoлжны быть фиксирoвaны */
+        
+    }
+    .mc {
+        width: 98%;
+        padding: 5px;
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1.2em;
+
+    }
+    #ws {
+        display: block;
+    }
+    .next {
+       height: 30px; 
+    }
+    .select2 {
+        width: 98% !important;
+    }
+    .note {
+        padding: 5px;
+    }
+}
+
+@media all and (max-width: 360px) {
+    html, body {
+        line-height: 1.2em;
+        background-image: url();
+    }
+    .modal_div {
+        width: 310px;
+        height: 600px;  /* Рaзмеры дoлжны быть фиксирoвaны */
+        margin: 0px;
+        padding: 5px;
+        
+    }
+    .mc {
+        width: 98%;
+        padding: 5px;
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1em;
+
+    }
+    #ws {
+        display: block;
+        background-color: rgb(78, 132, 190);
+    }
+    .next, .nnext, .nnnext {
+       height: 30px; 
+       margin-right: 20px;
+    }
+    .select2 {
+        width: 98% !important;
+    }
+    .note {
+        padding: 5px;
+    }
+    label {
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 320px) {
+    html, body {
+        line-height: 1.2em;
+        background-image: url();
+    }
+    .modal_div {
+        width: 300px;
+        height: 545px; /* Рaзмеры дoлжны быть фиксирoвaны */
+        
+    }
+    .mc {
+        width: 98%;
+        padding: 5px;
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 1em;
+
+    }
+    #ws {
+        display: block;
+    }
+    .next {
+       height: 30px; 
+    }
+    .select2 {
+        width: 98% !important;
+    }
+    .note {
+        padding: 5px;
+    }
+}

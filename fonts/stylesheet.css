@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Mayak';
+    src: url('Mayak-Light.eot');
+    src: local('Mayak Light'), local('Mayak-Light'),
+        url('Mayak-Light.eot?#iefix') format('embedded-opentype'),
+        url('Mayak-Light.woff2') format('woff2'),
+        url('Mayak-Light.woff') format('woff'),
+        url('Mayak-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mayak';
+    src: url('Mayak-Bold.eot');
+    src: local('Mayak Bold'), local('Mayak-Bold'),
+        url('Mayak-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Mayak-Bold.woff2') format('woff2'),
+        url('Mayak-Bold.woff') format('woff'),
+        url('Mayak-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
